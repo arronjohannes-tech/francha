@@ -20,6 +20,10 @@ npm run dev
 
 Danach die angezeigte lokale Adresse im Browser öffnen.
 
+Für Vercel erkennt der Build die Vercel-Umgebung automatisch und verwendet
+den Nitro-Vercel-Adapter. Lokal kann derselbe Output mit
+`npm run build:vercel` geprüft werden.
+
 Alternativ: In VS Code `Strg/Cmd + Shift + B` drücken und
 **ServiceFlow: Produktions-Build** auswählen. Über **Ausführen und Debuggen**
 kann die App samt Entwicklungsserver direkt im Browser gestartet werden.
@@ -52,6 +56,11 @@ npm test          # Build und Tests
 - Tailwind CSS 4
 - Lucide Icons
 - Cloudflare-kompatibler Sites-Build
+
+Cloudflare bleibt der primäre D1-/Worker-Zielruntime. Für einen Vercel-Deploy
+müssen die benötigten Produktionsvariablen und eine kompatible Datenbankbindung
+in Vercel konfiguriert werden; der Vercel-Build erzeugt den Server-Output unter
+`.vercel/output`.
 
 Die Übersichtsseite enthält weiterhin Demo-KPIs; die produktiven API-Routen
 und das D1-Schema sind vorbereitet. Die nächsten Dashboard-Abfragen können
